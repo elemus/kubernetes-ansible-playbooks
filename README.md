@@ -9,4 +9,4 @@
 
 * Setup a single node Kubernetes:
 
-        ansible-playbook kubernetes-single-node.yml -e target=<remote-server-ip>
+        ansible-playbook kubernetes-single-node.yml -e target=<remote-server-ip> -u <remote-user>

@@ -16,10 +16,18 @@
     name: "{{ packages }}"
     state: present
     update_cache: yes
+    force: yes
   vars:
     packages:
-      - docker-ce
-      - docker-ce-cli
+      - docker-ce=5:18.09.9~3-0~debian-stretch
+      - docker-ce-cli=5:18.09.9~3-0~debian-stretch
       - containerd.io
   notify:
     - docker status
+
+- name: Configure Docker daemon
+  copy:
+    src: ./../files/daemon.json
+    dest: /etc/docker/daemon.json
+  notify:
+    - docker restart

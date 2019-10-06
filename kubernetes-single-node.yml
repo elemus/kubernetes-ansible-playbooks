@@ -6,3 +6,4 @@
     - swapoff
     - docker-install
     - kubernetes-install
+    - kubernetes-init-flannel
