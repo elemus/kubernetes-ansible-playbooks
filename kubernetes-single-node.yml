@@ -4,3 +4,4 @@
   roles:
     - common
     - swapoff
+    - kubernetes-install
