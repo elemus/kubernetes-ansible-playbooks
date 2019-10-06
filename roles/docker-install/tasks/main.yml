@@ -1,0 +1,25 @@
+---
+# tasks file for docker-install
+
+- name: Add the Docker key for installation
+  apt_key:
+    url: https://download.docker.com/linux/debian/gpg
+    state: present
+
+- name: Add the Docker repository
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/debian stretch stable
+    state: present
+
+- name: Install Docker
+  apt:
+    name: "{{ packages }}"
+    state: present
+    update_cache: yes
+  vars:
+    packages:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+  notify:
+    - docker status
