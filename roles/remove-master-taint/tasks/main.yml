@@ -1,0 +1,6 @@
+---
+# tasks file for remove-master-taint
+
+- name: Allow scheduling pods on master nodes
+  become: no
+  command: kubectl taint nodes --all node-role.kubernetes.io/master-

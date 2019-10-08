@@ -5,7 +5,7 @@
 * [Ansible](https://ansible.com)
 * VM or real machine with freshly installed [Debian](https://www.debian.org/distrib/) OS
 
-## How to use
+## Setup a cluster
 
 1. Setup SSH connection to master and worker nodes
 2. Add nodes hosts to the `/etc/ansible/hosts`:
@@ -24,4 +24,10 @@ worker-node-host3
 
 ```shell script
 ansible-playbook kubernetes-cluster.yml
+```
+
+## Setup single-node cluster
+
+```shell script
+ansible-playbook kubernetes-cluster-single-node.yml -e target=<master-node-host>
 ```
