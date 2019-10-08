@@ -1,9 +1,14 @@
 ---
-- hosts: "{{ target }}"
+- hosts: all
   become: yes
   roles:
     - common
     - swapoff
     - docker-install
     - kubernetes-install
-    - kubernetes-init-flannel
+
+- hosts: master_nodes
+  become: yes
+  roles:
+    - kubectl-install
+    - cluster-init

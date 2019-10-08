@@ -1,0 +1,8 @@
+---
+# tasks file for kubectl-install
+
+- name: Install kubectl and kubernetes-cni
+  apt:
+    name: kubectl
+    state: present
+    update_cache: yes

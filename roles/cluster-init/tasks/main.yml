@@ -1,5 +1,5 @@
 ---
-# tasks file for kubernetes-flannel-init
+# tasks file for cluster-init
 
 - name: Add the br_netfilter module
   modprobe:
