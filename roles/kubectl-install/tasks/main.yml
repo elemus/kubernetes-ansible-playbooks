@@ -1,7 +1,7 @@
 ---
 # tasks file for kubectl-install
 
-- name: Install kubectl and kubernetes-cni
+- name: Install kubectl
   apt:
     name: kubectl
     state: present

@@ -12,12 +12,12 @@
 
 ```ini
 [master_nodes]
-master-node-host
+master-node-host ansible_user=kubernetes
 
 [worker_nodes]
-worker-node-host1
-worker-node-host2
-worker-node-host3
+worker-node-host1 ansible_user=kubernetes
+worker-node-host2 ansible_user=kubernetes
+worker-node-host3 ansible_user=kubernetes
 ```
 
 3. Run `kubernetes-cluster.yml` playbook to setup Kubernetes cluster:
@@ -29,5 +29,5 @@ ansible-playbook kubernetes-cluster.yml
 ## Setup single-node cluster
 
 ```shell script
-ansible-playbook kubernetes-cluster-single-node.yml -e target=<master-node-host>
+ansible-playbook kubernetes-cluster-single-node.yml -e target=<master-node-host> -u kubernetes
 ```
