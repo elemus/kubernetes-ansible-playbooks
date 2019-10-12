@@ -19,5 +19,5 @@
     update_cache: yes
   vars:
     packages:
-      - kubelet
-      - kubeadm
+      - kubelet=1.16.1-00
+      - kubeadm=1.16.1-00
