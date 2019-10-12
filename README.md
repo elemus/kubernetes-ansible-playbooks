@@ -26,8 +26,8 @@ worker-node-host3 ansible_user=kubernetes
 ansible-playbook kubernetes-cluster.yml
 ```
 
-## Setup single-node cluster
+## Setup a single-node cluster
 
 ```shell script
-ansible-playbook kubernetes-cluster-single-node.yml -e target=<master-node-host> -u kubernetes
+ansible-playbook kubernetes-cluster-single-node.yml -e target=master-node-host -u kubernetes
 ```

@@ -5,4 +5,3 @@
   apt:
     name: kubectl=1.16.1-00
     state: present
-    update_cache: yes

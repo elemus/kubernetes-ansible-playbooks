@@ -1,5 +1,5 @@
 ---
-# tasks file for remove-master-taint
+# tasks file for master-taint-remove
 
 - name: Allow scheduling pods on master nodes
   become: no

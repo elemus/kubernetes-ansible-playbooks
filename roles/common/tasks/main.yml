@@ -1,17 +1,16 @@
 ---
 # tasks file for common
 
-- name: Update and upgrade packages
+- name: Upgrade packages
   apt:
     upgrade: "yes"
     update_cache: yes
     cache_valid_time: 86400
 
-- name: Install packages to allow apt to use a repository over HTTPS
+- name: Install common packages
   apt:
     name: "{{ packages }}"
     state: present
-    update_cache: yes
   vars:
     packages:
       - apt-transport-https
@@ -19,3 +18,22 @@
       - curl
       - gnupg-agent
       - software-properties-common
+
+- name: Add the br_netfilter module
+  modprobe:
+    name: br_netfilter
+    state: present
+
+- name: Enable IP forwarding
+  sysctl:
+    name: net.ipv4.ip_forward
+    value: "1"
+    state: present
+    reload: yes
+
+- name: Pass bridged IPv4 traffic to iptable's chains
+  sysctl:
+    name: net.bridge.bridge-nf-call-iptables
+    value: "1"
+    state: present
+    reload: yes

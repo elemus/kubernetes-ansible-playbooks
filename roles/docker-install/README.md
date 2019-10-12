@@ -3,6 +3,11 @@ Docker-Install Role
 
 Installs docker
 
+Dependencies
+------------
+
+* common
+
 Example Playbook
 ----------------
 

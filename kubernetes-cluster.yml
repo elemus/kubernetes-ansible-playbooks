@@ -12,3 +12,8 @@
   roles:
     - kubectl-install
     - cluster-init
+
+- hosts: worker_nodes
+  become: yes
+  roles:
+    - cluster-join

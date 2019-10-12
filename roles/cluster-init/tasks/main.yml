@@ -1,25 +1,6 @@
 ---
 # tasks file for cluster-init
 
-- name: Add the br_netfilter module
-  modprobe:
-    name: br_netfilter
-    state: present
-
-- name: Enable IP forwarding
-  sysctl:
-    name: net.ipv4.ip_forward
-    value: "1"
-    state: present
-    reload: yes
-
-- name: Pass bridged IPv4 traffic to iptable's chains
-  sysctl:
-    name: net.bridge.bridge-nf-call-iptables
-    value: "1"
-    state: present
-    reload: yes
-
 - name: Initialize the Kubernetes cluster
   command: kubeadm init --pod-network-cidr=10.244.0.0/16
 
@@ -41,3 +22,14 @@
 - name: Apply Flannel to the cluster
   become: no
   command: kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/862c448ef28fd890e2ac4e5fddc49e7fe9693b31/Documentation/kube-flannel.yml
+
+- name: Get join command
+  shell: kubeadm token create --print-join-command
+  register: join_command
+
+- name: Set node join command fact
+  set_fact:
+    join_command: "{{ join_command.stdout_lines[0] }}"
+  delegate_facts: true
+  delegate_to: "{{ item }}"
+  with_items: "{{ groups['worker_nodes'] }}"

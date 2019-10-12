@@ -1,7 +1,7 @@
 Common Role
 =========
 
-Updates and upgrades installed packages
+Updates and upgrades installed packages and setup IP forwarding
 
 Example Playbook
 ----------------

@@ -1,19 +1,19 @@
-Kubectl-Install Role
+Cluster-Join Role
 =========
 
-Installs kubectl
+A brief description of the role goes here.
 
 Dependencies
 ------------
 
-* common
+* kubernetes-install
 
 Example Playbook
 ----------------
 
     - hosts: servers
       roles:
-         - kubectl-install
+         - cluster-join
 
 License
 -------

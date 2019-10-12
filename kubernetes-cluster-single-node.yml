@@ -8,4 +8,4 @@
     - kubernetes-install
     - kubectl-install
     - cluster-init
-    - remove-master-taint
+    - master-taint-remove
