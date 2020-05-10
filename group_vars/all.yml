@@ -2,5 +2,5 @@
 # file: group_vars/all.yml
 
 docker_version: 5:18.09.9~3-0~debian-stretch
-k8s_version: 1.16.1-00
+k8s_version: 1.18.0-00
 flannel_config: https://raw.githubusercontent.com/coreos/flannel/862c448ef28fd890e2ac4e5fddc49e7fe9693b31/Documentation/kube-flannel.yml
