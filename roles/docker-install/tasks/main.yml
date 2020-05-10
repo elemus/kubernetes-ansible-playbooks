@@ -18,8 +18,8 @@
     force: yes
   vars:
     packages:
-      - docker-ce=5:18.09.9~3-0~debian-stretch
-      - docker-ce-cli=5:18.09.9~3-0~debian-stretch
+      - docker-ce={{ docker_version }}
+      - docker-ce-cli={{ docker_version }}
       - containerd.io
 
 - name: Configure Docker daemon

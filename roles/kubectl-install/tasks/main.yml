@@ -3,6 +3,6 @@
 
 - name: Install kubectl
   apt:
-    name: kubectl=1.16.1-00
+    name: kubectl={{ k8s_version }}
     state: present
     force: yes

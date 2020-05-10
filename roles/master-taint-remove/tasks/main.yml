@@ -3,4 +3,4 @@
 
 - name: Allow scheduling pods on master nodes
   become: no
-  command: kubectl taint nodes --all node-role.kubernetes.io/master-
+  command: kubectl taint nodes --all.yml node-role.kubernetes.io/master-

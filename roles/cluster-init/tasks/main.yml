@@ -24,7 +24,7 @@
 
 - name: Apply Flannel to the cluster
   become: no
-  command: kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/862c448ef28fd890e2ac4e5fddc49e7fe9693b31/Documentation/kube-flannel.yml
+  command: "kubectl apply -f {{ flannel_config }}"
 
 - name: Get join command
   shell: kubeadm token create --print-join-command
