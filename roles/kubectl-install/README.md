@@ -1,12 +1,7 @@
 Kubectl-Install Role
 =========
 
-Installs kubectl
-
-Dependencies
-------------
-
-* common
+Install kubectl
 
 Example Playbook
 ----------------

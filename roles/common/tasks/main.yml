@@ -1,17 +1,6 @@
 ---
 # tasks file for common
 
-- name: Add the Kubernetes package key for installation
-  apt_key:
-    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
-    state: present
-
-- name: Add the Kubernetes repository
-  apt_repository:
-    repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
-    state: present
-    filename: kubernetes.list
-
 - name: Upgrade packages
   apt:
     upgrade: "yes"
@@ -48,3 +37,13 @@
     value: "1"
     state: present
     reload: yes
+
+- name: Remove swapfile from /etc/fstab
+  mount:
+    name: swap
+    fstype: swap
+    state: absent
+
+- name: Disable swap
+  command: swapoff -a
+  when: ansible_swaptotal_mb > 0

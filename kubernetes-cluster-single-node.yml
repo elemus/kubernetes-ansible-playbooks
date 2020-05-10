@@ -3,7 +3,6 @@
   become: yes
   roles:
     - common
-    - swapoff
     - docker-install
     - kubernetes-install
     - kubectl-install

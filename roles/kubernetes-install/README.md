@@ -1,13 +1,7 @@
-Kubernetes-Install Role
+Kube-Install Role
 =========
 
-Install kubelet, kubeadm, kubectl and kubernetes-cni network plugin
-
-Dependencies
-------------
-
-* common
-* swapoff
+Install kubelet and kubeadm
 
 Example Playbook
 ----------------

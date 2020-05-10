@@ -2,7 +2,7 @@
 # tasks file for cluster-join
 
 - name: Join the Kubernetes cluster
-  shell: "{{ join_command }} >> join_result.txt"
-  args:
-    chdir: $HOME
-    creates: join_result.txt
+  command: "{{ join_command }}"
+  register: cluster_join_result
+
+- debug: msg="{{ cluster_join_result.stdout_lines }}"

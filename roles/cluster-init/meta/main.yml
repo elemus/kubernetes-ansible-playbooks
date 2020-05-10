@@ -1,5 +1,0 @@
-dependencies:
-  - role: docker-install
-  - role: kubernetes-install
-  - role: kubectl-install
-  - role: swapoff

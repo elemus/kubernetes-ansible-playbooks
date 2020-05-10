@@ -3,11 +3,6 @@ Master-Taint-Remove Name
 
 Allow scheduling pods on master nodes
 
-Dependencies
-------------
-
-* kubectl-install
-
 Example Playbook
 ----------------
 

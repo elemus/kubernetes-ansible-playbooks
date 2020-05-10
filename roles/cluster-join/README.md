@@ -1,12 +1,7 @@
 Cluster-Join Role
 =========
 
-A brief description of the role goes here.
-
-Dependencies
-------------
-
-* kubernetes-install
+Join worker nodes to cluster
 
 Example Playbook
 ----------------

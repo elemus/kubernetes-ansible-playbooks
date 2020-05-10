@@ -1,6 +1,17 @@
 ---
 # tasks file for kubernetes-install
 
+- name: Add the Kubernetes package key for installation
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    state: present
+
+- name: Add the Kubernetes repository
+  apt_repository:
+    repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+    state: present
+    filename: kubernetes.list
+
 - name: Install kubelet and kubeadm
   apt:
     name: "{{ packages }}"
